@@ -1,6 +1,9 @@
 package com.example.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @NamedQueries({
@@ -14,6 +17,9 @@ public class Message {
     @GeneratedValue
     private Long id;
     private String text;
+
+    @CreationTimestamp
+    private Date date;
 
     public Long getId() {
         return id;
